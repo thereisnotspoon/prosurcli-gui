@@ -1,0 +1,38 @@
+BODY { font-family: 'Gentium Book Basic', Cambria, Georgia, serif; margin: 20px; }
+H1 { font-variant: small-caps; font-size: 250%; text-shadow: 2px 2px 2px #aaa; text-align: center; }
+H1 + H2 { text-align: center; }
+H1 + H2.section { text-align: left; }
+/*#663399, #6600cc*/
+A:link { color: #440099; text-decoration: none; }
+A:visited { color: #440099; text-decoration: none; }
+A:hover { background-color: #440099; color: #dacceb; }
+A:active { background-color: black; color: #dddddd; }
+.purplebox, .section { background-color: #440099; color: white;
+  padding: 1ex 1em; font-weight: bold; clear: both; }
+.purplebox { font-size: large; }
+.purplebox A:link, .section A:link { color: yellow; }
+.purplebox A:visited, .section A:visited { color: yellow; }
+.purplebox A:hover, .section A:hover { background-color: yellow; color: #440099; }
+.section { text-transform: uppercase; padding: 0.5ex 0.5em; }
+  /* border: solid; */
+  /* border-top: solid; border-bottom: solid; */
+  /* color: #663399; */
+  /* background-color: #dddddd; } */
+.small { font-size: smaller; text-transform: none; }
+.preview { margin-bottom: 1ex; clear: right; }
+.description { padding-left: 2em; }
+.stackpreview { display: inline-block; margin: 3ex 1em; padding: 4px;
+  clear: both; text-align: center; background-color: #dacceb;
+  vertical-align: top; }
+  /* margin: 2ex 0.5em; padding: 0.4ex 0.5em; */
+.stackpreview P { margin-top: 0em; }
+.stackpreview P + P, .stackpreview DIV + P { margin-bottom: 0.5em; }
+.image A IMG, .image A TABLE { border: #440099 solid 4px; position: relative; left: -4px; top: -4px; }
+.image A:hover IMG, .image A:hover TABLE { border-color: #dacceb; opacity: 0.5; }
+.image A:hover { background-color: inherit; }
+.heading { font-size: x-large; font-weight: bold; }
+.caption { font-style: italic; }
+.float { float: right; margin: 1.5ex 0em 1.5ex 1.5em; text-align: center; }
+/* rotate.js */
+.rotate-container { position: relative; }
+.rotate-me { display: none; }

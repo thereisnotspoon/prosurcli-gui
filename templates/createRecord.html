@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block title %}Create Record{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+
+{% block content %}
+<h2>Create Record</h2><br>
+{% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+<form action="{{ url_for('login') }}" method=post>
+
+    Onapi Id:
+    <input type=text name=onapiId><br>
+
+    Application Id:
+    <input type=text name=applicationId><br>
+
+    Record Type:
+    <input type=text name=recordType><br>
+
+    National Presetation Date:
+    <input type=text name=nationalPresentationDate><br>
+
+    National Publishing Date:
+    <input type=text name=nationalPublishingDate><br>
+
+    Title:
+    <input type=text name=title><br>
+
+    Applicant Name:
+    <input type=text name=applicantName><br>
+
+    Status Id:
+    <input type=text name=statusId><br>
+
+    Ip Record Detail Link:
+    <input type=text name=ipRecordDetailLink><br>
+
+    Ip Record File Service:
+    <input type=text name=ipRecordFileService><br>
+
+    Distinctive Sign Type:
+    <input type=text name=distinctiveSignType><br>
+
+    Ppresentation Type:
+    <input type=text name=presentationType><br>
+
+    Registration Date:
+    <input type=text name=registrationDate><br>
+
+    Expiration:
+    <input type=text name=expiration><br>
+
+    Logo Description:
+    <input type=text name=logoDescription><br>
+
+    Nice Classes:
+    <input type=text name=niceClasses><br>
+
+    <input type=submit value=Create>
+
+</form>
+
+{% endblock %}
