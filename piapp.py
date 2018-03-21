@@ -1,34 +1,17 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-app = Flask(__name__)
+from flask import jsonify
+from piapp.database import db_session
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template("index.html")
 
 @app.route('/user/<username>')
 def show_user_profile(username):
     # show the user profile for that user
     return 'User %s' % username
-
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-    # show the post with the given id, the id is an integer
-    return 'Post %d' % post_id
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        do_the_login()
-    else:
-        show_the_login_form()
-
-def do_the_login():
-    return "okaeri"
-
-def show_the_login_form():
-    return "login showed"
 
 @app.route('/hello/')
 @app.route('/hello/<name>')
@@ -38,6 +21,23 @@ def hello(name=None):
 @app.route('/createRecord', methods=['GET', 'POST'])
 def createRecord():
     if request.method == 'POST':
-        do_the_login()
+        for k, v in request.form.items():
+            print(k, " -> ", v)
+        return crearRegistro()
     else:
         return render_template('createRecord.html')
+
+#practicing ajax
+@app.route('/_add_numbers')
+def add_numbers():
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a + b)
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
+app = Flask(__name__)
+
+def crearRegistro():
+    return "okaeri"
